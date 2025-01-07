@@ -39,7 +39,7 @@ main .slide_bnr {
     background-size:cover;
     height:600px;
 }
-main .slide_bnr .contents {width:1400px; margin:0 auto; height:100%;}
+main .slide_bnr .contents {width:1400px; margin:0 auto; height:100%; padding-top:179px;}
 main .slide_bnr .contents a {}
 main .slide_bnr .contents a img {}
 main .slide_bnr .scroll_bg {
@@ -182,11 +182,13 @@ footer .f_left .row2 p em {font-weight:700;}
 footer .f_left .row2 p a {color:#8E8E8E; font-weight:700;}
 footer .f_left .row3 {}
 footer .f_left .row3 p {}
-footer .f_right {background-color: deepskyblue;
-    display:flex; flex-flow:row nowrap;
-    font-size:0.81rem;
-}
+/* =================================================== footer 오른쪽 공통선택자*/
+footer .f_right {display:flex; flex-flow:row nowrap; font-size:0.81rem;}
 footer .f_right > * {margin-right:75px;}
+footer .f_right h2 {font-weight:700; margin-bottom:17px;}
+footer .f_right p {margin-bottom:17px;}
+footer .f_right p a {}
+/* =================================================== footer 오른쪽 개별선택자*/
 footer .f_right .about {}
 footer .f_right .about h2 {}
 footer .f_right .about p {}
@@ -195,11 +197,12 @@ footer .f_right .cs {}
 footer .f_right .cs h2 {}
 footer .f_right .cs p {}
 footer .f_right .cs p a {}
-footer .f_right .cs p em {}
-footer .f_right .social {}
-footer .f_right .social a {}
+footer .f_right .cs p em {font-weight:700;}
+footer .f_right .social {display:flex; flex-flow:column nowrap;}
+footer .f_right .social h2 {}
+footer .f_right .social a {margin-bottom:17px;}
 footer .f_right .social a img {width:20px; height:20px;}
-footer .f_right .family_site {background-color: chartreuse; margin:0;}
-footer .f_right .family_site h2 {}
+footer .f_right .family_site {margin:0; display:flex;}
+footer .f_right .family_site h2 {margin-right:7px;}
 footer .f_right .family_site a {}
 footer .f_right .family_site a img {}
