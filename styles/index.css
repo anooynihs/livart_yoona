@@ -53,10 +53,8 @@ main .slide_bnr .scroll_bg .scrollbar {
 /* =================================================== main 2행, 3행 공통선택자 */
 main .product {width:1400px; margin:0 auto;}
 main .product h2 {font-size:1.5rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:30px;}
-main .product .product_wrap {background-color: tomato;
-    display:flex; flex-flow:row wrap; justify-content:space-between;
-}
-main .product .product_wrap .prd {width:335px; margin-bottom:57px;}
+main .product .product_wrap {display:flex; flex-flow:row wrap; justify-content:space-between;}
+main .product .product_wrap .prd {width:calc(100% - 60px) / 4;}
 main .product .product_wrap .prd a {}
 main .product .product_wrap .prd a img {width:100%; border-radius:8px;}
 main .product .product_wrap .prd .brand_name {margin-top:15px; margin-bottom:5px;}
@@ -73,6 +71,11 @@ main .product .product_wrap .prd .price p span {font-size:0.81rem; color:#B1B1B1
 main .product .product_wrap .prd .price p em {font-weight:700;}
 /* =================================================== main 2행 새로나온상품 개별선택자*/
 main .new {margin-top:200px;}
+main .new .product_wrap {}
+main .new .product_wrap .prd:nth-child(1),
+main .new .product_wrap .prd:nth-child(2),
+main .new .product_wrap .prd:nth-child(3),
+main .new .product_wrap .prd:nth-child(4) {margin-bottom:57px;}
 /* =================================================== main 3행 인기상품 개별선택자 */
 main .best {margin-top:143px;}
 main .best .prd_category {display:flex; flex-flow:row nowrap; margin-bottom:15px;}
@@ -85,41 +88,105 @@ main .best .prd_category li a{font-size:1rem;}
 main .line_bnr {
     background-image:url(../images/bnr_002.jpg);
     background-size:cover;
-    height:370px;
+    height:370px; margin-top:200px;
 }
-main .line_bnr .text_wrap {text-align:center;}
-main .line_bnr .text_wrap h1 {font-size:4rem; font-weight:700; color:#fff;}
+main .line_bnr .text_wrap {text-align:center; padding:134px 0;}
+main .line_bnr .text_wrap h1 {font-size:4rem; font-weight:700; color:#fff; margin-bottom:15px;}
 main .line_bnr .text_wrap p {font-size:1.5rem; letter-spacing:-0.02em; color:#fff;}
 main .line_bnr .text_wrap p em {font-size:1.5rem; letter-spacing:-0.02em; color:#fff; font-weight:700;}
 /* =================================================== main 5행 혜택&이벤트 */
-main .benefit {background-color: yellow; width:1400px; margin:0 auto;}
-main .benefit h2 {}
-main .benefit p {}
-main .benefit > .contents {}
-main .benefit > .contents a {}
-main .benefit > .contents a img {}
-/* =================================================== main 6행 리바트이야기 */
-main .story_wrap {background-color: yellowgreen; width:1400px; margin:0 auto;}
-main .story_wrap h2 {}
-main .story_wrap > .contents {}
-main .story_wrap > .contents .story {}
-main .story_wrap > .contents .story h3 {}
-main .story_wrap > .contents .story p {}
+main .benefit {width:1400px; margin:0 auto; margin-top:200px; text-align:center;}
+main .benefit h2 {font-size:2.25rem; font-weight:700; letter-spacing:-0.02em; margin:5px 0 50px;}
+main .benefit p {font-size:1rem; font-weight:600;}
+main .benefit .contents {display:flex; flex-flow:row nowrap; justify-content:space-between;}
+main .benefit .contents a {width:calc((100% - 36px) / 3);}
+main .benefit .contents a img {width:100%; border-radius:8px;}
+/* =================================================== main 6행 리바트이야기, 공통선택자 */
+main .story_wrap {width:1400px; margin:0 auto; margin-top:200px;}
+main .story_wrap h2 {
+    font-size:2.25rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:50px;
+    text-align:center;
+}
+main .story_wrap .contents {display:flex; flex-flow:row nowrap; justify-content:space-between;}
+main .story_wrap .contents .story {
+    width:calc((100% - 36px) / 3); height:575px; 
+    padding:50px 45px; border-radius:8px;
+}
+main .story_wrap .contents .story .text {height:100%; display:flex; flex-flow:column nowrap; justify-content:end;}
+main .story_wrap .contents .story .text h3 {z-index:20;
+    font-size:1.5rem; font-weight:700; letter-spacing:-0.02em; 
+    color:#fff; margin-bottom:8px;
+}
+main .story_wrap .contents .story .text p {font-size:1rem; letter-spacing:-0.02em; color:#fff; z-index:20;}
+/* =================================================== main 6행 개별선택자 */
+main .story_wrap .contents .office {
+    background-image:url(../images/story_001.jpg);
+    background-size:cover; position:relative;
+}
+main .story_wrap .contents .office::after {
+    display:block; content:'';
+    width:100%; height:575px;
+    background-color:rgba(0,0,0,0.3);
+    position:absolute; left:0; top:0; z-index:10;
+    border-radius:8px;
+}
+main .story_wrap .contents .office .text {}
+main .story_wrap .contents .office .text h3 {}
+main .story_wrap .contents .office .text p {}
+main .story_wrap .contents .furn {
+    background-image:url(../images/story_002.jpg);
+    background-size:cover; position:relative;
+}
+main .story_wrap .contents .furn::after {
+    display:block; content:'';
+    width:100%; height:575px;
+    background-color:rgba(0,0,0,0.3);
+    position:absolute; left:0; top:0; z-index:10;
+    border-radius:8px;
+}
+main .story_wrap .contents .furn .text {}
+main .story_wrap .contents .furn .text h3 {}
+main .story_wrap .contents .furn .text p {}
+main .story_wrap .contents .class {
+    background-image:url(../images/story_003.jpg);
+    background-size:cover; position:relative;
+}
+main .story_wrap .contents .class::after {
+    display:block; content:'';
+    width:100%; height:575px;
+    background-color:rgba(0,0,0,0.3);
+    position:absolute; left:0; top:0; z-index:10;
+    border-radius:8px;
+}
+main .story_wrap .contents .class .text{}
+main .story_wrap .contents .class .text h3 {}
+main .story_wrap .contents .class .text p {}
 /* =================================================== footer 공통선택자 */
-footer {background-color: springgreen;}
+footer {
+    margin-top:200px; padding:80px 80px;
+    border-top:2px solid #ddd;
+    display:flex; flex-flow:row nowrap; justify-content:space-between;
+}
 footer h2 {}
 footer p {}
 footer p em{}
 footer p a {}
 /* =================================================== footer */
-footer .f_left {background-color: crimson;}
-footer .f_left .row1 {}
-footer .f_left .row1 a {}
-footer .f_left .row2 {}
-footer .f_left .row2 p {}
-footer .f_left .row2 p em {}
-footer .f_left .row2 p a {}
-footer .f_right {background-color: deepskyblue;}
+footer .f_left {color:#8E8E8E; font-size:0.81rem;}
+footer .f_left .row1 {margin-bottom:20px;}
+footer .f_left .row1 a {color:#8E8E8E; margin-right:17px;}
+footer .f_left .row1 a:last-child {margin:0;}
+footer .f_left .row2 {margin-bottom:20px;}
+footer .f_left .row2 > p {line-height:175%;}
+footer .f_left .row2 p em {font-weight:700;}
+footer .f_left .row2 p a {color:#8E8E8E; font-weight:700;}
+footer .f_left .row3 {}
+footer .f_left .row3 p {}
+footer .f_right {background-color: deepskyblue;
+    display:flex; flex-flow:row nowrap;
+    font-size:0.81rem;
+}
+footer .f_right > * {margin-right:75px;}
 footer .f_right .about {}
 footer .f_right .about h2 {}
 footer .f_right .about p {}
@@ -131,8 +198,8 @@ footer .f_right .cs p a {}
 footer .f_right .cs p em {}
 footer .f_right .social {}
 footer .f_right .social a {}
-footer .f_right .social a img {}
-footer .f_right .family_site {background-color: chartreuse;}
+footer .f_right .social a img {width:20px; height:20px;}
+footer .f_right .family_site {background-color: chartreuse; margin:0;}
 footer .f_right .family_site h2 {}
 footer .f_right .family_site a {}
 footer .f_right .family_site a img {}
